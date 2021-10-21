@@ -1,10 +1,36 @@
 import "./styles.css";
+import {
+  Container,
+  Card,
+  Grid,
+  Paper,
+  Typography,
+  Button,
+  TextField,
+  AppBar,
+  Avatar,
+  Toolbar,
+  makeStyles
+} from "@material-ui/core";
 
 export default function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <Container>
+      <AppBar>
+        <Toolbar>
+          <Typography classes={classes.logoLong}>
+            practice firebase authentication
+          </Typography>
+          <Avatar>EK</Avatar>
+        </Toolbar>
+      </AppBar>
+      <Paper></Paper>
+    </Container>
   );
 }
+
+const useStyles = makeStyles(() => {
+  logoLong: {
+  }
+});
