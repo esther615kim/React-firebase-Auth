@@ -1,5 +1,5 @@
-import { createTheme } from "@material-ui/core"; //코어에서!!
-import { indigo, teal } from "@material-ui/core";
+import { createTheme } from '@mui/material/styles';//코어에서!!
+import { indigo, teal } from '@mui/material/colors';
 export const theme = createTheme({
   palette: {
     primary: {

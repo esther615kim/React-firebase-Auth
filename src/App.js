@@ -1,4 +1,4 @@
-import "./styles.css";
+
 import {
   Container,
   Card,
@@ -10,27 +10,48 @@ import {
   AppBar,
   Avatar,
   Toolbar,
-  makeStyles
-} from "@material-ui/core";
+} from "@mui/material";
+import { styled } from '@mui/system';
 
 export default function App() {
-  const classes = useStyles();
+
   return (
     <Container>
       <AppBar>
-        <Toolbar>
-          <Typography classes={classes.logoLong}>
+        <ToolBar>
+          <LogoLong >
+            firebase Auth
+          </LogoLong>
+          <LogoSmall>
             practice firebase authentication
-          </Typography>
+          </LogoSmall>
           <Avatar>EK</Avatar>
-        </Toolbar>
+        </ToolBar>
       </AppBar>
       <Paper></Paper>
-    </Container>
+    </Container >
   );
 }
 
-const useStyles = makeStyles(() => {
-  logoLong: {
+const ToolBar = styled(Toolbar)({
+  display: "flex",
+  color: "#212121",
+  justifyContent: "space-between",
+  alignItems: "center"
+})
+
+const LogoSmall = styled(Typography)(({ theme }) => ({
+  display: "none",
+  color: "yellow",
+  [theme.breakpoints.up('sm')]: {
+    display: "block"
   }
-});
+})
+)
+
+const LogoLong = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.up('sm')]: {
+    display: "none"
+  }
+})
+)
