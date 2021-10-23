@@ -1,4 +1,4 @@
-
+import React from 'react';
 import {
   Container,
   Card,
@@ -12,13 +12,14 @@ import {
   Toolbar,
 } from "@mui/material";
 import { styled } from '@mui/system';
+import Login from './components/Login';
 
 export default function App() {
 
   return (
     <Container>
-      <AppBar>
-        <ToolBar>
+      <AppBar position="fixed">
+        <ToolBar >
           <LogoLong >
             firebase Auth
           </LogoLong>
@@ -28,14 +29,16 @@ export default function App() {
           <Avatar>EK</Avatar>
         </ToolBar>
       </AppBar>
-      <Paper></Paper>
+      {/* 로그인 토큰이 있어? 없으면 사인인으로 :  */}
+      <Login />
     </Container >
   );
 }
 
 const ToolBar = styled(Toolbar)({
   display: "flex",
-  color: "#212121",
+  color: "#fff",
+  background: "#212121",
   justifyContent: "space-between",
   alignItems: "center"
 })
