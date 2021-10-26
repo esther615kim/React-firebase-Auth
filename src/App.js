@@ -1,60 +1,25 @@
-import React from 'react';
+
+
+import React, { useState } from 'react';
 import {
   Container,
-  Card,
-  Grid,
-  Paper,
-  Typography,
-  Button,
-  TextField,
-  AppBar,
-  Avatar,
-  Toolbar,
 } from "@mui/material";
 import { styled } from '@mui/system';
 import Login from './components/Login';
+import Signup from './components/Signup';
+import Appbar from './components/Appbar';
 
 export default function App() {
 
+
   return (
-    <Container>
-      <AppBar position="fixed">
-        <ToolBar >
-          <LogoLong >
-            firebase Auth
-          </LogoLong>
-          <LogoSmall>
-            practice firebase authentication
-          </LogoSmall>
-          <Avatar>EK</Avatar>
-        </ToolBar>
-      </AppBar>
+
+    <Container Container >
+      <Appbar />
       {/* 로그인 토큰이 있어? 없으면 사인인으로 :  */}
       <Login />
-    </Container >
+      {/* <Signup /> */}
+    </Container>
   );
 }
 
-const ToolBar = styled(Toolbar)({
-  display: "flex",
-  color: "#fff",
-  background: "#212121",
-  justifyContent: "space-between",
-  alignItems: "center"
-})
-
-const LogoSmall = styled(Typography)(({ theme }) => ({
-  display: "none",
-  color: "yellow",
-  [theme.breakpoints.up('sm')]: {
-    display: "block"
-  }
-})
-)
-
-const LogoLong = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.up('sm')]: {
-    display: "none"
-  }
-})
-)

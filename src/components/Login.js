@@ -1,18 +1,42 @@
 import React from 'react';
 import {
     Container,
-    Card,
     Grid,
+    Avatar,
     Paper,
     Typography,
     Button,
-    TextField,
-    Link
+    Link,
+    TextField
 } from "@mui/material";
 import { styled } from '@mui/system';
+import { useHistory } from 'react-router-dom';
 import PersonIcon from '@mui/icons-material/Person';
+import {
+    signInWithEmailAndPassword
+} from 'firebase/auth';
 
 function Login() {
+
+    // const [loginEmail, setRegisterEmail] = useState("");
+    // const [loginPassword, setRegisterPassword] = useState("");
+    // // const [user, setUser] = useState("");//App에서 props로 받기 
+
+
+    // const login = async () => {
+    //     try {
+    //         const user = await signInWithEmailAndPassword(
+    //             auth,
+    //             loginEmail,
+    //             loginPassword
+    //         )
+    //         console.log(user);
+    //     } catch (error) {
+    //         console.log(error.message);
+    //     }
+    // };
+    let history = useHistory();
+
     return (
         <Container sx={{ display: "flex", mt: 20, justifyContent: "center", }}>
             <LoginPaper elevation={2}>
@@ -26,13 +50,17 @@ function Login() {
                 <Button variant="contained" sx={{ mt: 1, color: "#fff" }}>
                     <Typography variant="h6">Login</Typography>
                 </Button>
-                <Link underline="hover" href="./Signup.js" color="primary.dark" mt={1}>
+                <Button underline="hover" color="primary.dark" mt={1}>
                     Forgot password?
-                </Link>
-                <Link underline="hover"
-                    href="./Signup.js" mt={1}>not registered yet?</Link>
-            </LoginPaper>
+                </Button>
 
+                <Button onclick={() => {
+                    history.push("/signup")
+                }} underline="hover"
+                    href="./Signup.js"
+                    mt={1}>not registered yet?
+                </Button>
+            </LoginPaper>
         </Container >
     )
 }
@@ -48,5 +76,4 @@ const LoginPaper = styled(Paper)({
     justifyContent: "center",
     flexDirection: "column",
     textAlign: "center"
-
 })
