@@ -9,6 +9,7 @@ import {
     Link,
     TextField
 } from "@mui/material";
+import GoogleButton from './GoogleButton';
 import { styled } from '@mui/system';
 import { useHistory } from 'react-router-dom';
 import PersonIcon from '@mui/icons-material/Person';
@@ -53,6 +54,7 @@ function Login() {
                 <Button underline="hover" color="primary.dark" mt={1}>
                     Forgot password?
                 </Button>
+                <GoogleButton />
 
                 <Button onclick={() => {
                     history.push("/signup")
